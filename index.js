@@ -1,6 +1,9 @@
 'use strict';
 
 let getNodeDes = (action) => {
+    if (action.form === 'script') {
+        return 'script';
+    }
     let sourceNode = action.source.node;
     let rest = `${getContent(sourceNode, action.source.path)}${getId(sourceNode)}`;
     return `${getTagName(sourceNode)}${rest}`;
