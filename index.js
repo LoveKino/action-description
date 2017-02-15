@@ -4,6 +4,9 @@ let getNodeDes = (action) => {
     if (action.form === 'script') {
         return 'script';
     }
+    if(!action.source) {
+        return '';
+    }
     let sourceNode = action.source.node;
     let rest = `${getContent(sourceNode, action.source.path)}${getId(sourceNode)}`;
     return `${getTagName(sourceNode)}${rest}`;
